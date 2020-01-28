@@ -57,7 +57,7 @@ object Problem1 extends LazyLogging {
     */
   def main(args: Array[String]) = {
     // get file location from config
-    val fileConfig = ConfigUtils.loadAppConfig[DataConfig]("com.example.problem1")
+    val fileConfig = ConfigUtils.loadAppConfig[DataConfig]("com.cscie88a.problem1")
     logger.info(s"reading from ${fileConfig.celsiusdata} and writing to ${fileConfig.fahrenheitdata}")
 
     val fahrenheitLines: List[Double] =

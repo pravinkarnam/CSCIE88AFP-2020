@@ -1,8 +1,8 @@
 ## fp-scala-homework
-This project ...
+This project provides a starter template for the scala homework assignments for CSCI-EE88A
 
 
-The project requires Java 8, Scala 2.12.1 and sbt 0.13.16 environment to run.
+The project requires Java 8+, Scala 2.12.10 and sbt 1.3.6 environment to run.
 
 ### Getting started
  Use the following commands to get started with your project
@@ -12,6 +12,6 @@ The project requires Java 8, Scala 2.12.1 and sbt 0.13.16 environment to run.
  - Run tests: `sbt test`
 
 ### License
-Copyright <year>, <author>
+Copyright 2020, Edward Sumitra
 
 Licensed under the Apache License, Version 2.0.
