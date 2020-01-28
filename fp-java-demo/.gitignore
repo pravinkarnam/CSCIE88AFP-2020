@@ -3,11 +3,11 @@
 
 # Ignore Gradle build output directory
 build
-
-#./bin/
+build/
+bin/
 .gradle/
-#.classpath
-#.project
-#.settings
+.classpath
+.project
+.settings
 .idea
 *.iml
