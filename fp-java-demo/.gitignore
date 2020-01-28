@@ -5,6 +5,8 @@
 build
 build/
 bin/
+tools/*.gz
+tools/*/*
 .gradle/
 .classpath
 .project
