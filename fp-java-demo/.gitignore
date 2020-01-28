@@ -13,3 +13,4 @@ tools/*/*
 .settings
 .idea
 *.iml
+i.DS_Store
