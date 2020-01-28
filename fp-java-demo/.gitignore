@@ -4,10 +4,10 @@
 # Ignore Gradle build output directory
 build
 
-./bin/
+#./bin/
 .gradle/
-.classpath
-.project
-.settings
+#.classpath
+#.project
+#.settings
 .idea
 *.iml
