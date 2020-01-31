@@ -19,6 +19,6 @@ elif [ "$os_name" == "linux" ]; then
         export JAVA_HOME="$SCRIPT_PATH/jdk-11.0.6+10"
 fi
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-echo "Set your java home in your terminal by running following command:"
+echo "Set your java home in your terminal by running following command every time you open a new terminal:"
 echo "export JAVA_HOME=${JAVA_HOME}"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
