@@ -9,15 +9,18 @@ services:
     image: hseeberger/scala-sbt:11.0.5_1.3.6_2.12.10
     networks:
       - scala-java-demo
-    command: 'sleep 9000'
+    volumes:
+      - "../fp-scala-homework:/fp-java-homework"
+    working_dir: /fp-scala-homework
+    command: 'sbt compile test'
 
   java-machine:
     image: adoptopenjdk/openjdk11
     networks:
       - scala-java-demo
     volumes:
-      - "../fp-java-demo:/fp-java-demo"
-    working_dir: /fp-java-demo
+      - "../fp-java-homework/hw0:/fp-java-homework/hw0"
+    working_dir: /fp-java-homework/hw0
     command: './gradlew clean test'
     # command: 'bash /fp-java-demo/gradlew clean test'
 
