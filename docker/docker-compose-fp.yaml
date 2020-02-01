@@ -10,7 +10,7 @@ services:
     networks:
       - scala-java-demo
     volumes:
-      - "../fp-scala-homework:/fp-java-homework"
+      - "../fp-scala-homework:/fp-scala-homework"
     working_dir: /fp-scala-homework
     command: 'sbt compile test'
 
