@@ -37,6 +37,7 @@ task("srcZip", type:Zip){
         exclude ('*/*.project')
         exclude 'build'
         exclude '*.zip'
+        exclude '*.gradle'
     }
     destinationDir project.rootDir
 }
