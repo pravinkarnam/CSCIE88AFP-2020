@@ -24,6 +24,19 @@ dependencies {
 test {
     useJUnitPlatform()
     testLogging {
-        events "PASSED", "STARTED", "FAILED", "SKIPPED"
+        events "PASSED", "STARTED", "FAILED", "SKIPPED", "STANDARD_OUT", "STANDARD_ERROR"
     }
+}
+
+task("srcZip", type:Zip){
+    archiveBaseName = "sourceZip"
+    from (project.rootDir){
+        exclude ('*/*.iml')
+        exclude 'sourceZip*'
+        exclude ('*/*.zip')
+        exclude ('*/*.project')
+        exclude 'build'
+        exclude '*.zip'
+    }
+    destinationDir project.rootDir
 }
