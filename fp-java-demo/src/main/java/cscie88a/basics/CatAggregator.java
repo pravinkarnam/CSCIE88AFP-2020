@@ -20,7 +20,7 @@ public class CatAggregator {
 	}
 	
 	public long countCatsByColorFunctional(Collection<Cat> allCats, String bodyColorToMatch, String eyeColorToMatch) {
-		long numOfCats = allCats.stream()
+		long numOfCats = allCats.stream().parallel()
 			.filter(cat -> cat.getBodyColor().equalsIgnoreCase(bodyColorToMatch))
 			.filter(cat -> cat.getEyeColor().equalsIgnoreCase(eyeColorToMatch))
 			.mapToLong(cat -> 1l)
@@ -29,5 +29,4 @@ public class CatAggregator {
 		System.out.println("Functional: Found " + numOfCats + " " + bodyColorToMatch + " cats with " + eyeColorToMatch + " eyes");
 		return numOfCats;
 	}
-
 }

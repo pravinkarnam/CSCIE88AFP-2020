@@ -1,45 +1,66 @@
-package cscie88a.basics;
+package cscie88a.basics3;
 
-public class Cat {
+public class Cat extends Animal {
 
-	private String name;
-	private String eyeColor;
-	private String bodyColor;
-	
+	public static String whatISay = "I don't care what you asked me to say - I say MEOW only";
+
 	public Cat() {}
 
 	public Cat(String name, String eyeColor, String bodyColor) {
-		super();
-		this.name = name;
-		this.eyeColor = eyeColor;
-		this.bodyColor = bodyColor;
+		super(name, eyeColor, bodyColor);
 	}
 	
+	public static String saySomething(String somethingToSay){
+		return whatISay;
+	}
+
+	// this method is overwritten !
+	public boolean takeMedicine(boolean withTreat) {
+		System.out.println("you won't trick me - I'm not taking it!");
+		return false;		
+	}
+
+	public static void main(String[] args) throws Exception {
+		Cat demon = new Cat("Demon", "green", "black");
+		Cat sneaky = new Cat("Sneaky", "blue", "gray");
+		String somethingToSay = "Hello!";
+		System.out.println("Demon says: " + demon.saySomething(somethingToSay));
+		System.out.println("Sneaky says: " + sneaky.saySomething(somethingToSay));
+		
+		System.out.println("All cats say: " + Cat.saySomething(somethingToSay));
+	}
+
 	@Override
 	public String toString() {
 		return "Cat [name=" + name + ", eyeColor=" + eyeColor + ", bodyColor=" + bodyColor + "]";
 	}
 	
+	@Override
 	public String getName() {
 		return name;
 	}
 
+	@Override
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	@Override
 	public String getEyeColor() {
 		return eyeColor;
 	}
 
+	@Override
 	public void setEyeColor(String eyeColor) {
 		this.eyeColor = eyeColor;
 	}
 
+	@Override
 	public String getBodyColor() {
 		return bodyColor;
 	}
 
+	@Override
 	public void setBodyColor(String bodyColor) {
 		this.bodyColor = bodyColor;
 	}

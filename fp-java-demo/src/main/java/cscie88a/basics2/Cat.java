@@ -1,4 +1,4 @@
-package cscie88a.basics;
+package cscie88a.basics2;
 
 public class Cat {
 
@@ -15,6 +15,19 @@ public class Cat {
 		this.bodyColor = bodyColor;
 	}
 	
+	public String saySomething(String somethingToSay){
+		String whatISay = "I don't care what you asked me to say - I say MEOW only";
+		return whatISay;
+	}
+
+	public static void main(String[] args) throws Exception {
+		Cat demon = new Cat("Demon", "green", "black");
+		Cat sneaky = new Cat("Sneaky", "blue", "gray");
+		String somethingToSay = "Hello!";
+		System.out.println("Demon says: " + demon.saySomething(somethingToSay));
+		System.out.println("Sneaky says: " + sneaky.saySomething(somethingToSay));
+	}
+
 	@Override
 	public String toString() {
 		return "Cat [name=" + name + ", eyeColor=" + eyeColor + ", bodyColor=" + bodyColor + "]";
