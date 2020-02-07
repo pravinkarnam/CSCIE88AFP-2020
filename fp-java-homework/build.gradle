@@ -5,7 +5,7 @@ plugins {
     id 'idea'
 }
 
-group 'cscie88a.hw0'
+group 'cscie88a'
 version '1.0-SNAPSHOT'
 
 repositories {
