@@ -19,8 +19,8 @@ services:
     networks:
       - scala-java-demo
     volumes:
-      - "../fp-java-homework/hw0:/fp-java-homework/hw0"
-    working_dir: /fp-java-homework/hw0
+      - "../fp-java-homework:/fp-java-homework"
+    working_dir: /fp-java-homework
     command: './gradlew clean test'
     # command: 'bash /fp-java-demo/gradlew clean test'
 
