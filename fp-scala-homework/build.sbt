@@ -1,4 +1,6 @@
 import Dependencies._
+import sbt.io.{IO, Path, FileFilter}
+
 lazy val root = (project in file(".")).
   settings(
     inThisBuild(List(
@@ -26,3 +28,20 @@ lazy val root = (project in file(".")).
         oldStrategy(x)
     }
   )
+
+lazy val zipHomework = taskKey[Unit]("zip files for homework submission")
+
+zipHomework := {
+  val bd = baseDirectory.value
+  val targetFile = s"${bd.getAbsolutePath}/scalaHomework.zip"
+  val ignoredPaths = ".*(\\.idea|target|\\.DS_Store)/*".r.pattern
+  val fileFilter = new FileFilter {
+    override def accept(f: File) = !ignoredPaths.matcher(f.getAbsolutePath).lookingAt
+  }
+  println("zipping project files ...")
+  IO.delete(new File(targetFile))
+  IO.zip(
+    Path.selectSubpaths(
+      new File(bd.getAbsolutePath), fileFilter),
+    new File(targetFile))
+}
