@@ -17,9 +17,9 @@ Note: above install command will  also print JAVA_HOME path that can be used in 
 
  - Compile: `./gradlew build`
  - create eclipse project files -> ./gradlew cleanEclipe eclipse
- - create ide project files -> ./gradlew cleanidea idea
+ - create ide project files -> `./gradlew cleanidea idea`
  - Run tests: `./gradlew test`
- - Ship this project with just source code and gradle script -> `./gradlew build srcZip`
+ - Ship this project with just source code and gradle script -> `./gradlew clean assembe srcZip`
 
 ### License
 Copyright 2020, Dhyan M
