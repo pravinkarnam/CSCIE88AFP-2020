@@ -22,6 +22,6 @@ Note: above install command will  also print JAVA_HOME path that can be used in 
  - Ship this project with just source code and gradle script -> `./gradlew clean assembe srcZip`
 
 ### License
-Copyright 2020, Dhyan M
+Copyright 2020, Harvard Extension School CSCIE88A
 
 Licensed under the Apache License, Version 2.0.
