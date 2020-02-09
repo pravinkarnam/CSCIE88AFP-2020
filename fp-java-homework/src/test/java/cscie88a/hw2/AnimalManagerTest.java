@@ -32,10 +32,10 @@ class AnimalManagerTest {
 		ActionResult result = AnimalManager.trainForTricks(
 				new ITrainable() {
 					public ActionResult doTrick(String trickName) {
-						System.out.println("I always do tricks!");						
+						System.out.println("I always do tricks!");
 						return ActionResult.SUCCESS;
 					}
-				}, 
+				},
 				trickName);
 		assertEquals(ActionResult.SUCCESS, result);
 	}
@@ -76,6 +76,34 @@ class AnimalManagerTest {
 				}, 
 				bolt);
 		assertEquals(ActionResult.SUCCESS, result);		
+	}
+
+	//Added by Praveen
+	@Test
+	public void testTrainForSuperTricks(){
+		ActionResult dogResult = AnimalManager.trainForSuperTrick(bolt,trickName);
+		assertEquals(ActionResult.FAILURE, dogResult);
+		ActionResult catResult = AnimalManager.trainForSuperTrick(sneaky,trickName);
+		assertEquals(ActionResult.FAILURE, catResult);
+	}
+
+	//Added by Praveen
+	@Test
+	public void testTrainForSuperTricks_anonymous(){
+		ActionResult result = AnimalManager.trainForSuperTrick(
+				new ITrainable(){
+			@Override
+			public ActionResult doSuperTrick(String trickName){
+				System.out.println("Let me play a super trick for you");
+				return ActionResult.SUCCESS;
+			}
+			@Override
+			public ActionResult doTrick(String trickName){
+				System.out.println("Iam not falling for your trick: " + trickName);
+				return ActionResult.FAILURE;
+			}
+		}, trickName);
+		assertEquals(ActionResult.SUCCESS, result);
 	}
 
 }

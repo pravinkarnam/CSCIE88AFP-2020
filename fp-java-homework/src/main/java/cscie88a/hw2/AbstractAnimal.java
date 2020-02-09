@@ -21,11 +21,18 @@ public abstract class AbstractAnimal {
 
 	public abstract ActionResult playWithMe(AbstractAnimal aFriend);
 
-	public boolean takeMedicine(boolean withTreat) {
+	public abstract ActionResult playWithToy(Toy toy);
+
+	//Added by Praveen
+	public String whoAreYou(){
+		return "I am " + name + "!";
+	}
+
+	public ActionResult takeMedicine(boolean withTreat) {
 		if (withTreat) {
-			return true;
+			return ActionResult.SUCCESS;
 		} else {
-			return false;
+			return ActionResult.FAILURE;
 		}
 	}
 	

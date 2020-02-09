@@ -10,4 +10,10 @@ public interface ITrainable {
 		return ActionResult.SUCCESS;
 	}
 
+	//Added by Praveen
+	default public ActionResult doSuperTrick(String trickName){
+		System.out.println("I'm not a Superhero, can't do super trick!");
+		return ActionResult.FAILURE;
+	}
+
 }

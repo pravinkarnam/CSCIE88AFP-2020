@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import javax.swing.*;
+
 class AllAnimalTests {
 
 	private Cat sneaky;
@@ -16,12 +18,38 @@ class AllAnimalTests {
 		bolt = new Dog("Bolt", "brown", "whity");
 	}
 
+	//Modified by Praveen
 	@Test
-	void testTakeMedicine() {		
-		assertTrue(bolt.takeMedicine(true));
-		assertFalse(bolt.takeMedicine(false));
-		assertFalse(sneaky.takeMedicine(true));
-		assertFalse(sneaky.takeMedicine(false));
+	void testTakeMedicine() {
+		assertEquals(ActionResult.SUCCESS , bolt.takeMedicine(true));
+		assertEquals(ActionResult.FAILURE, bolt.takeMedicine(false));
+		assertEquals(ActionResult.FAILURE, sneaky.takeMedicine(true));
+		assertEquals(ActionResult.FAILURE, sneaky.takeMedicine(false));
+	}
+	//Added by Praveen
+	@Test
+	public void testPlayWithToy(){
+		Toy squeakyToy = new Toy();
+		assertEquals(ActionResult.SUCCESS, sneaky.playWithToy(squeakyToy));
+		Toy notSqueakyToy = new Toy(false, true, true);
+		assertEquals(ActionResult.FAILURE, sneaky.playWithToy(notSqueakyToy));
+		assertEquals(ActionResult.SUCCESS, bolt.playWithToy(squeakyToy));
+		assertEquals(ActionResult.SUCCESS, bolt.playWithToy(notSqueakyToy));
+	}
+
+	//Added by Praveen
+	@Test
+	public void testWhoAreYou(){
+		System.out.println( "Calling from cat instance : "+ sneaky.whoAreYou());
+		System.out.println( "Calling from dog instance : "+ bolt.whoAreYou());
+	}
+
+	//Added by Praveen
+	@Test
+	public void testPlayWithMeForHedgehog(){
+		Hedgehog hhog = new Hedgehog("hoggy", "green", "brown");
+		assertEquals(ActionResult.FAILURE, hhog.playWithMe(sneaky));
+		assertEquals(ActionResult.FAILURE, hhog.playWithMe(bolt));
 	}
 
 	@Test
