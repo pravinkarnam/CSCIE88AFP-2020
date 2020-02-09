@@ -2,16 +2,16 @@
 This project provides a starter template for the java homework assignments for CSCI-EE88A
 
 
-The project requires Java 11+, gradle-6.0 . Project is shipped with gradle wrapper . so you should just be able to use ./gradlew
+The project requires Java 11+, gradle-6.0 . Project is shipped with gradle wrapper . So you should just be able to use ./gradlew
 inside this direcory
 
 ## Install JDK11
---> You can cd into tools directory `cd tools` 
---> run `.install-jdk.sh`
-This should download jdk 11 on to your local machine .
-Note: the above install command will print JAVA_HOME path that can be used in IDE tools to setup the JDK for your projects;
--- export this variable in your shell so that gradle would use this JDK from the command line:
-export JAVA_HOME=<value_from_the_script>
+ - You can cd into tools directory `cd tools` 
+ - run `.install-jdk.sh`
+ - This should download jdk 11 on to your local machine .
+ - Note: the above install command will print JAVA_HOME path that can be used in IDE tools to setup the JDK for your projects;
+ - export this variable in your shell so that gradle would use this JDK from the command line:
+ export JAVA_HOME=<value_from_the_script>
 
 
 ### Getting started
