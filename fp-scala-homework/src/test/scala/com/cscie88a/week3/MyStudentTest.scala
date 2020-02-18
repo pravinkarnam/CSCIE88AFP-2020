@@ -8,4 +8,9 @@ final class MyStudentTest
   with BeforeAndAfterAll {
 
   // add unit tests for problem 3 here
+  "MyStudent object " should {
+    "have a greet method which returns Hello PRAVEEN KARNAM" in {
+      MyStudent.greet should be("Hello PRAVEEN KARNAM")
+    }
+  }
 }
