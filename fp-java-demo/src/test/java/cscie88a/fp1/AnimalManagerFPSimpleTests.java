@@ -12,7 +12,7 @@ class AnimalManagerFPSimpleTests {
 	 */
 	@Test
 	public void testDoRun_concrete(){
-		Cat sneaky = new Cat("Sneaky", "blue", "gray");
+		CatFP sneaky = new CatFP("Sneaky");
 		ActionResult result = AnimalManagerFP.trainToRun(sneaky);
 		assertEquals(ActionResult.FAILURE, result);
 	}
@@ -91,7 +91,7 @@ class AnimalManagerFPSimpleTests {
 
 	/**
 	 * Lambda function implementing ITrainable2 interface -
-	 * with no arguments abut with a return value
+	 * with no arguments but with a return value
 	 */
 	@Test
 	public void testDoAnyTrick2(){

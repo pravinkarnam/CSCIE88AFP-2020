@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class AnimalManagerFPNextTests {
+class AnimalManagerFPTests {
 	private String trickName = "sit";
 
 	@Test
@@ -103,7 +103,7 @@ class AnimalManagerFPNextTests {
 	}
 
 	/**
-	 * Example of an anonymous class that overrides more than other method
+	 * Example of an anonymous class that overrides more than one method
 	 * Lambdas can NOT do that
 	 */
 	@Test
