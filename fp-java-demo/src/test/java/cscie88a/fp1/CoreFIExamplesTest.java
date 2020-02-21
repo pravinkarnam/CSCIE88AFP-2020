@@ -1,8 +1,9 @@
-package cscie88a.fp2;
+package cscie88a.fp1;
 
 import cscie88a.basics4.ActionResult;
 import cscie88a.fp1.AbstractAnimalFP;
 import cscie88a.fp1.CatFP;
+import cscie88a.fp1.CoreFIExamples;
 import cscie88a.fp1.ITrainableFP;
 import org.junit.jupiter.api.Test;
 
