@@ -83,8 +83,9 @@ class CoreFIExamplesTest {
 
     }
 
+    // example of implementing Supplier/Consumer FIs using lambdas
     @Test
-    public void testSupplierAndConsumer(){
+    public void testSupplierAndConsumer_lambdaImpl(){
         Random random = new Random();
         Supplier<AbstractAnimalFP> catSupplier = () -> {
             boolean hasCurrentShots = random.nextBoolean();
@@ -103,4 +104,27 @@ class CoreFIExamplesTest {
 
         CoreFIExamples.chainSupplierAndConsumer(catSupplier, animalConsumer);
     }
+
+    // example of implementing Supplier/Consumer FIs using anonymous classes
+    @Test
+    public void testSupplierAndConsumer_anonymousImpl(){
+        Supplier<AbstractAnimalFP> catSupplier = new Supplier<AbstractAnimalFP>() {
+            @Override
+            public AbstractAnimalFP get() {
+                CatFP newCat = new CatFP("SuppliedCat_Abstract");
+                System.out.println("I'm supplying a new cat: " + newCat);
+                return newCat;
+            }
+        };
+
+        Consumer<AbstractAnimalFP> animalConsumer = new Consumer<AbstractAnimalFP>() {
+            @Override
+            public void accept(AbstractAnimalFP abstractAnimalFP) {
+                System.out.println("I'm accepting an animal: " + abstractAnimalFP);
+            }
+        };
+
+        CoreFIExamples.chainSupplierAndConsumer(catSupplier, animalConsumer);
+    }
+
 }

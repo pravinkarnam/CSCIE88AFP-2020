@@ -18,14 +18,14 @@ class AdoptionTests {
 	@Test
 	public void testMethodReference_specific_instance(){
 		AdoptionService service = new AdoptionService();
-		DogFP lilo = new DogFP("Lilo");
-		lilo.setHasCurrentShots(true);
-		IAdoptable lambdaMethodRef = lilo::checkForAdoptionStatusInstance;
+		DogFP stitch = new DogFP("Stitch");
+		stitch.setHasCurrentShots(true);
+		IAdoptable lambdaMethodRef = stitch::checkForAdoptionStatusInstance;
 
 		ActionResult result = service.tryToAdopt( lambdaMethodRef );
 		assertEquals(ActionResult.SUCCESS, result);
 
-		lilo.setHasCurrentShots(false);
+		stitch.setHasCurrentShots(false);
 		result = service.tryToAdopt( lambdaMethodRef );
 		assertEquals(ActionResult.FAILURE, result);
 	}
