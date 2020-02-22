@@ -82,9 +82,26 @@ class AnimalManagerFPSimpleTests {
 	 * no action in the body
 	 */
 	@Test
-	public void testDoAnyTrick1_doNothing(){
+	public void testDoAnyTrick1_doNothing_really(){
 		ActionResult result = AnimalManagerFP.doAnyTrick1(
 				() -> { }
+		);
+		assertEquals(ActionResult.SUCCESS, result);
+	}
+
+	/**
+	 * Lambda function implementing ITrainable1 interface -
+	 * with no arguments and no return value;
+	 * some work is done in the body - but nothing is returned
+	 */
+	@Test
+	public void testDoAnyTrick1_doNothing(){
+		ActionResult result = AnimalManagerFP.doAnyTrick1(
+				() -> {
+					String myTest = "marina";
+					int length = myTest.length();
+					System.out.println("length = " + length);
+				}
 		);
 		assertEquals(ActionResult.SUCCESS, result);
 	}
